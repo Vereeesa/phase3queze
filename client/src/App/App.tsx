@@ -6,6 +6,7 @@ import Main from '../features/Main/Main';
 import GameList from '../features/Game/GameList';
 import Login from '../features/User/components/Login';
 import Registration from '../features/User/components/Registration';
+import './App.css';
 
 function App(): JSX.Element {
   const dispatch = useDispatch();
