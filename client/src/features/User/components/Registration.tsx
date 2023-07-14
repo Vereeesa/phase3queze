@@ -32,7 +32,7 @@ export default function Registration(): JSX.Element {
     <div className="form__container">
       <form onSubmit={onHadleSubmit} className="form__add-animal">
         <label className="form__label">
-          Name
+          Имя
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -40,7 +40,7 @@ export default function Registration(): JSX.Element {
           />
         </label>
         <label className="form__label">
-          Email
+          E-mail
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -48,7 +48,7 @@ export default function Registration(): JSX.Element {
           />
         </label>
         <label className="form__label">
-          Password
+          Пароль
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -56,7 +56,7 @@ export default function Registration(): JSX.Element {
           />
         </label>
         <p className="error">{}</p>
-        <button type="submit">SingUp</button>
+        <button type="submit">Регистрация</button>
       </form>
     </div>
   );

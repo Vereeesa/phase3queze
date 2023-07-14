@@ -28,7 +28,7 @@ export default function Login(): JSX.Element {
     <div className="form__container">
       <form onSubmit={onHadleSubmit} className="form__add-animal">
         <label className="form__label">
-          Email
+          E-mail
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -36,14 +36,14 @@ export default function Login(): JSX.Element {
           />
         </label>
         <label className="form__label">
-          Password
+          Пароль
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
           />
         </label>
-        <button type="submit">SingIn</button>
+        <button type="submit">Войти</button>
       </form>
     </div>
   );
