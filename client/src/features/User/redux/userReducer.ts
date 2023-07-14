@@ -1,5 +1,5 @@
-import { UserState } from "../types/UserState";
-import { UserAction } from "../types/UserAction";
+import { UserState } from '../types/UserState';
+import { UserAction } from '../types/UserAction';
 
 const initialState: UserState = {
   user: undefined,
@@ -10,22 +10,22 @@ export const userReducer = (
   action: UserAction
 ): UserState => {
   switch (action.type) {
-    case "auth/reg":
+    case 'auth/reg':
       return {
         ...state,
         user: action.payload,
       };
-    case "auth/log":
+    case 'auth/log':
       return {
         ...state,
         user: action.payload,
       };
-    case "auth/check":
+    case 'auth/check':
       return {
         ...state,
         user: action.payload,
       };
-    case "auth/logout":
+    case 'auth/logout':
       return {
         ...state,
         user: undefined,
