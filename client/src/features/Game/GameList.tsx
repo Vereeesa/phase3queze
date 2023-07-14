@@ -1,5 +1,5 @@
 import React, { useSelector } from 'react-redux';
-import GameCard from './GameCard';
+// import GameCard from './GameCard';
 import { Question, Topic } from './type/gameType';
 import { RootStateType } from '../../store';
 

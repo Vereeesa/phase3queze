@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import './style/authStyle.scss';
+import '../style/authStyle.scss';
 
 export default function Registration(): JSX.Element {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [cpassword, setCpassword] = useState('');
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -19,7 +18,7 @@ export default function Registration(): JSX.Element {
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify({ name, email, password, cpassword }),
+      body: JSON.stringify({ name, email, password }),
     });
     const data = await res.json();
     dispatch({
@@ -53,14 +52,6 @@ export default function Registration(): JSX.Element {
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type="password"
-          />
-        </label>
-        <label className="form__label">
-          Confirm password
-          <input
-            value={cpassword}
-            onChange={(e) => setCpassword(e.target.value)}
             type="password"
           />
         </label>
