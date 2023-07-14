@@ -13,6 +13,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT,
       },
+      name: {
+        allowNull: false,
+        type: Sequelize.TEXT,
+      },
       password: {
         type: Sequelize.TEXT,
         allowNull: false,
@@ -33,5 +37,5 @@ module.exports = {
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Users');
-  }
+  },
 };
