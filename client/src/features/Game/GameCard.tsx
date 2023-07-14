@@ -1,7 +1,9 @@
 function GameCard(): JSX.Element {
-  return <div>
+  return (
+<div>
     {/* логика */}
-  </div>;
+</div>
+);
 }
 
 export default GameCard;
