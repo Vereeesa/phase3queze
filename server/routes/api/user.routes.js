@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { User } = require('../../db/models/user');
+const { User } = require('../../db/models');
 
 router.post('/', async (req, res) => {
   const { email, password, name } = req.body;
@@ -45,7 +45,7 @@ router.put('/:idUser', async (req, res) => {
   const { scoreUser } = req.body;
   try {
     const user = await User.findOne({ where: { id: req.params.idUser } });
-    user.scoreUser = scoreUser;
+    user.score = scoreUser;
     await user.save();
     res.json(user);
   } catch (error) {
