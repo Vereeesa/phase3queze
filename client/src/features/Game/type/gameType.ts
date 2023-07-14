@@ -9,5 +9,5 @@ export type Question = {
 export type Topic = {
   id: number;
   topicName: string;
-  Question: Question[];
+  Questions: Question[];
 };

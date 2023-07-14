@@ -1,3 +1,5 @@
 {
-  "workbench.colorTheme": "Chronotype: Morning"
+  "workbench.colorTheme": "Chronotype: Morning",
+  "eslint.workingDirectories": ["client", "server"]
+  
 }
