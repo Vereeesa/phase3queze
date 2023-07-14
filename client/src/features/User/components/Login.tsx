@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import './style/authStyle.scss';
+import '../style/authStyle.scss';
 
 export default function Login(): JSX.Element {
   const [email, setEmail] = useState('');
@@ -12,7 +12,7 @@ export default function Login(): JSX.Element {
 
   const onHadleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/auth/authorization', {
+    const res = await fetch('/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
