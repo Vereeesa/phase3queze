@@ -1,5 +1,5 @@
 import React, { useSelector } from 'react-redux';
-// import GameCard from './GameCard';
+import GameCard from './GameCard';
 import { Question, Topic } from './type/gameType';
 import { RootStateType } from '../../store';
 
@@ -12,9 +12,9 @@ function GameList(): JSX.Element {
           <div className="topic-row" key={topic.topicName}>
             <h2 className="topic-name">{topic.topicName}</h2>
             <div className="card-row">
-              {/* {topic.Question.map((question: Question) => (
+              {topic.Question.map((question: Question) => (
                 <GameCard key={question.id} question={question} />
-              ))} */}
+              ))}
             </div>
           </div>
         ))}
