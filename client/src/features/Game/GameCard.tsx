@@ -19,7 +19,7 @@ function GameCard({ question }: QuestionPropsType): JSX.Element {
     e.preventDefault();
     if (answer === question.answer) {
       setAnswerResult('Все верно. Молодец!');
-      fetch()
+      // fetch()
     } else {
       setAnswerResult(`Ответ не верный, верный ответ ${question.answer}`);
     }
