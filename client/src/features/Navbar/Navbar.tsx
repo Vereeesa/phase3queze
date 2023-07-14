@@ -12,47 +12,54 @@ function Navbar(): JSX.Element {
     e
   ): Promise<void> => {
     e.preventDefault();
-    await fetch('/api/auth/logout');
+    await fetch('/api/auth/logout', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     dispatch({ type: 'auth/logout' });
     navigate('/');
   };
   return (
-    <nav>
-      <ul>
-        <li>
-          <div>
-            <div>Очки:</div>
-          </div>
-        </li>
-        <li>
-          <Link to="/game">Игра</Link>
-        </li>
+    <nav className={styles.navbar}>
+      <ul className={styles.container}>
+
+            <div
+              className={styles.navbar__link}
+            >
+              Очки:
+            </div>
+
+        <div>
+          <Link
+            className={styles.navbar__link}
+            to="/game"
+          >Игра
+          </Link>
+        </div>
         {!user?.name ? (
                 <>
-                  <li>
+
                     <NavLink
                       className={styles.navbar__link}
                       to="/auth/login"
                     >
                       Войти
                     </NavLink>
-                  </li>
-                  <li>
+
                     <NavLink
                       className={styles.navbar__link}
                       to="/auth/registration"
                     >
                       Регистрация
                     </NavLink>
-                  </li>
+
                 </>
               ) : (
                 <>
-                  <NavLink className={styles.navbar__link} to="/game">
-                    Game
-                  </NavLink>
-                  <li className={styles.navbar__link}>Hello, {user?.name}</li>
-                  <li>
+                  <div className={styles.navbar__link}>Приветствуем, {user?.name}</div>
+                  <div>
                     <NavLink
                       onClick={handleLogOut}
                       className={styles.navbar__logout}
@@ -60,7 +67,7 @@ function Navbar(): JSX.Element {
                     >
                       Выйти
                     </NavLink>
-                  </li>
+                  </div>
                 </>
               )}
       </ul>
