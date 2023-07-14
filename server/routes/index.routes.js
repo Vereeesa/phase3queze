@@ -1,8 +1,10 @@
 const express = require('express');
-const studentsApiRouter = require('./api/student.routes');
+const usersApiRouter = require('./api/user.routes');
+const topicsApiRouter = require('./api/topic.routes');
 
 const router = express.Router();
 
-router.use('/api/students', studentsApiRouter);
+router.use('/api/users', usersApiRouter);
+router.use('/api/topics', topicsApiRouter);
 
 module.exports = router;

@@ -7,7 +7,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       questionName: {
         type: Sequelize.TEXT,
@@ -15,6 +15,10 @@ module.exports = {
       },
       answer: {
         type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      count: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       topicId: {
@@ -26,21 +30,17 @@ module.exports = {
         },
         onDelete: 'CASCADE',
       },
-      count: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
+        type: Sequelize.DATE
+      }
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Questions');
-  },
+  }
 };

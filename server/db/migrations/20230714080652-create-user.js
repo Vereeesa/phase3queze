@@ -7,28 +7,32 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
-      email: {
-        allowNull: false,
+      name: {
         type: Sequelize.TEXT,
+        allowNull: false,
       },
       password: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      scoreUser: {
+      email: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      score: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
+        type: Sequelize.DATE
+      }
     });
   },
   async down(queryInterface, Sequelize) {

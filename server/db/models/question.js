@@ -1,8 +1,14 @@
-'use strict';
-const { Model } = require('sequelize');
+const {
+  Model,
+} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Question extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
     static associate({ Topic }) {
       this.belongsTo(Topic, { foreignKey: 'topicId' });
     }
@@ -16,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    count: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     topicId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -25,12 +35,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       onDelete: 'CASCADE',
     },
-    count: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+  }, {
     sequelize,
-    modelName: 'Questions',
+    modelName: 'Question',
   });
   return Question;
 };
