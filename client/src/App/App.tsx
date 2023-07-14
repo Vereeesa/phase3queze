@@ -23,7 +23,9 @@ function App(): JSX.Element {
         <Route path="/game" element={<GameList />} />
         <Route path="/auth/registration" element={<Registration />} />
           <Route path="/auth/login" element={<Login />} />
+          <Route path="*" element={<div><img src="/404.gif" alt="Not Found" /><h3>Ты зашел не туда - такой страницы нет</h3></div>} />
       </Routes>
+
     </div>
   );
 }
