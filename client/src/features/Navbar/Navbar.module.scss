@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #3a2343;
+  background-color: #dedcdf;
   color: #fff;
   position: relative;
   display: flex;
@@ -14,14 +14,14 @@
     justify-content: start;
   }
   &__link {
-    color: #fff;
+    color: #5a3cf1;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
   }
   &__link:hover {
-    color: #f13cd9;
+    color: #5a3cf1;
   }
   &__logout{
     color: #fff;
@@ -47,11 +47,6 @@
 
 .active {
   color: red
-}
-
-.logo_tot {
-  width: 90px;
-
 }
 
 .nav {

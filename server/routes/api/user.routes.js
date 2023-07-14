@@ -42,7 +42,7 @@ router.post('/login', async (req, res) => {
 });
 
 // ЛОГАУТ
-router.delete('/', async (req, res) => {
+router.delete('/logout', async (req, res) => {
   req.session.destroy((error) => {
     if (error) {
       return res.status(500).json({ message: 'Ошибка при удалении сессии' });
@@ -52,6 +52,20 @@ router.delete('/', async (req, res) => {
       .status(200)
       .json({ message: 'logout success' });
   });
+});
+
+// ПРОВЕРКА СЕССИИ
+router.get('/check', async (req, res) => {
+  try {
+    if (req.session.userId) {
+      const user = await User.findOne({ where: { id: req.session.userId } });
+      res.json(user);
+      return;
+    }
+    res.json({ message: 'no' });
+  } catch ({ message }) {
+    res.json({ message });
+  }
 });
 
 /* router.delete("/:idUser", async (req, res) => {
